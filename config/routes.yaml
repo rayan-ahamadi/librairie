@@ -3,3 +3,15 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+delete_livre:
+    path: '/livre/{id}/delete'
+    controller: 'App\Controller\LivresController::delete'
+    requirements:
+        id: '\d+' 
+
+edit_livre:
+    path: '/livre/{id}/edit'
+    controller: 'App\Controller\LivresController::edit'
+    requirements:
+        id: '\d+' 

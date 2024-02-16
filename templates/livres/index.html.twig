@@ -1,0 +1,60 @@
+{% extends "base.html.twig" %}
+
+{% block head %}
+<head>
+    <title>Gestion de librairie</title>
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+    <header>
+        <button><a href="#" class='btn btn-primary'>Consulter les livres</a></button>
+        <button><a href="#" class='btn btn-primary'>Inscription</a></button>
+    </header>
+    <main>
+        <h1>Bienvenue dans la librairie</h1>
+        <img src="https://i.pinimg.com/564x/c1/70/6e/c1706eaaaa8e7f1a4782a9bb1704d22b.jpg" alt="image de la librairie">
+    </main>
+    <footer>copyright Librairie</footer>
+    <style>
+        html{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }    
+        body{
+            height:100%;
+            display : flex;
+            flex-direction: column;
+        }
+        header{
+            display:flex; 
+            flex-direction: row;
+            flex-grow: 0;
+            justify-content: center;
+            background-color: orange;
+        }
+        main{
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        footer{
+            flex-grow: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: orange;
+        }
+        button{
+            background: none;
+            border: none;
+        }
+    </style>
+</body>
+{% endblock %}

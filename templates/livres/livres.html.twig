@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+{% block body %}
+<style>
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    .table{
+        width: 80%;
+        margin: auto;
+    }
+    body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .delete{
+        background-color: red;
+    }
+    .edit{
+        background-color: green;
+    }
+</style>
+<body>
+    <button class='btn btn-primary'><a href='{{ path('new_livre')}}'>Ajouter</a></button>
+    <table class='table'>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Theme</th>
+                <th scope="col">NbPages</th>
+                <th scope="col">Format</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Editeur</th>
+                <th scope="col">Année</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Langue</th>
+                <th scope="col">Actions</th>
+            </tr>
+            {% for book in livres %}
+            <tr>
+                <td>{{ book.getId() }}</td>
+                <td>{{ book.getISBN() }}</td>
+                <td>{{ book.getTitrelivre() }}</td>
+                <td>{{ book.getThemeLivre() }}</td>
+                <td>{{ book.getNbrPagesLivre() }}</td>
+                <td>{{ book.getFormatLivre() }}</td>
+                <td>{{ book.getNomAuteur() }}</td>
+                <td>{{ book.getPrenomAuteur() }}</td>
+                <td>{{ book.getEditeur() }}</td>
+                <td>{{ book.getAnneeEdition() }}</td>
+                <td>{{ book.getPrixVente() }}</td>
+                <td>{{ book.getLangueLivre() }}</td>
+                <td>
+                    <button class='btn btn-primary edit'><a href="{{ path('edit_livre', {'id' : book.getId()}) }}">Modifier</a></button>
+                    <button class='btn btn-primary delete'><a href="{{ path('delete_livre', {'id' : book.getId()}) }}">Supprimer</a></button>
+                </td>
+            </tr>
+            {% endfor %}
+    </table>
+</body>
+{% endblock %}
